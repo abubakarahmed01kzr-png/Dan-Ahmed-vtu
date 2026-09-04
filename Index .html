@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan Ahmed VTU</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7f6;
+            color: #222;
+        }
+
+        .header {
+            background: #087f5b;
+            color: white;
+            padding: 25px 20px;
+            border-radius: 0 0 25px 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 27px;
+        }
+
+        .header p {
+            margin-bottom: 0;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .wallet {
+            background: white;
+            padding: 22px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+        }
+
+        .wallet h1 {
+            margin: 8px 0 18px;
+            font-size: 32px;
+        }
+
+        .fund {
+            background: #087f5b;
+            color: white;
+            border: 0;
+            padding: 13px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .service {
+            background: white;
+            border: 0;
+            padding: 25px 10px;
+            border-radius: 18px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.06);
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .service span {
+            display: block;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 20px;
+            margin-top: 18px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.06);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        input,
+        select,
+        .buy {
+            width: 100%;
+            padding: 14px;
+            margin-top: 12px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        input,
+        select {
+            border: 1px solid #ddd;
+            background: white;
+        }
+
+        .buy {
+            border: 0;
+            background: #087f5b;
+            color: white;
+            font-weight: bold;
+        }
+
+        .notice {
+            background: #fff8e6;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 18px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Dan Ahmed VTU</h1>
+        <p>Airtime • Data • Payments</p>
+    </div>
+
+    <div class="container">
+
+        <div class="wallet">
+            <small>Wallet Balance</small>
+            <h1>₦0.00</h1>
+
+            <button class="fund" onclick="fundWallet()">
+                + Fund Wallet
+            </button>
+        </div>
+
+        <div class="grid">
+
+            <button class="service" onclick="showAirtime()">
+                <span>📱</span>
+                Buy Airtime
+            </button>
+
+            <button class="service" onclick="showData()">
+                <span>🌐</span>
+                Buy Data
+            </button>
+
+            <button class="service" onclick="transactions()">
+                <span>📜</span>
+                Transactions
+            </button>
+
+            <button class="service" onclick="profile()">
+                <span>👤</span>
+                My Profile
+            </button>
+
+        </div>
+
+        <div class="card" id="content">
+
+            <h2>Welcome to Dan Ahmed VTU</h2>
+
+            <p>
+                Fast and convenient Airtime & Data services.
+            </p>
+
+            <div class="notice">
+                🔒 Your wallet and payments will be connected
+                to a secure payment server before real money
+                transactions are enabled.
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function fundWallet() {
+
+            alert(
+                "Fund Wallet\n\n" +
+                "Payment Gateway will be connected here.\n\n" +
+                "We will support secure payment methods such as Card and Bank Transfer."
+            );
+
+        }
+
+
+        function showAirtime() {
+
+            document.getElementById("content").innerHTML = `
+
+                <h2>📱 Buy Airtime</h2>
+
+                <select>
+                    <option>Select Network</option>
+                    <option>MTN</option>
+                    <option>Airtel</option>
+                    <option>Glo</option>
+                    <option>9mobile</option>
+                </select>
+
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                >
+
+                <input
+                    type="number"
+                    placeholder="Amount (₦)"
+                >
+
+                <button class="buy" onclick="alert('Airtime service will be connected to the VTU API.')">
+                    Buy Airtime
+                </button>
+
+            `;
+
+        }
+
+
+        function showData() {
+
+            document.getElementById("content").innerHTML = `
+
+                <h2>🌐 Buy Data</h2>
+
+                <select>
+                    <option>Select Network</option>
+                    <option>MTN</option>
+                    <option>Airtel</option>
+                    <option>Glo</option>
+                    <option>9mobile</option>
+                </select>
+
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                >
+
+                <select>
+                    <option>Select Data Plan</option>
+                    <option>500MB</option>
+                    <option>1GB</option>
+                    <option>2GB</option>
+                    <option>5GB</option>
+                    <option>10GB</option>
+                </select>
+
+                <button class="buy" onclick="alert('Data service will be connected to the VTU API.')">
+                    Buy Data
+                </button>
+
+            `;
+
+        }
+
+
+        function transactions() {
+
+            document.getElementById("content").innerHTML = `
+
+                <h2>📜 Transactions</h2>
+
+                <p>
+                    No transactions yet.
+                </p>
+
+            `;
+
+        }
+
+
+        function profile() {
+
+            document.getElementById("content").innerHTML = `
+
+                <h2>👤 My Profile</h2>
+
+                <p>
+                    Dan Ahmed VTU Customer
+                </p>
+
+                <p>
+                    Account status: Active
+                </p>
+
+            `;
+
+        }
+
+    </script>
+
+</body>
+</html>
