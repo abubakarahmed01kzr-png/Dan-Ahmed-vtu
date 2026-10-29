@@ -1,12 +1,15 @@
 {
-"name": "dan-ahmed-vtu",
-"version": "1.0.0",
-"private": true,
-"scripts": {
-"start": "node Server.js"
-},
-"dependencies": {
-"express": "^4.21.2",
-"better-sqlite3": "^11.8.1"
-}
+  "name": "dan-ahmed-vtu",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node Server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "better-sqlite3": "^11.8.1"
+  },
+  "engines": {
+    "node": "22.x"
+  }
 }
